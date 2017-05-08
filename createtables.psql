@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS thread (
+	name VARCHAR(40) PRIMARY KEY,
+	time TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS post (
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(20),
+	time TIMESTAMP,
+	text VARCHAR(5000),
+	thread VARCHAR(40) REFERENCES thread(name)
+);
+
+CREATE TABLE IF NOT EXISTS usertable (
+	username VARCHAR(20) PRIMARY KEY,
+	password VARCHAR(20)
+);
