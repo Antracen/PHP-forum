@@ -1,3 +1,111 @@
-.welcome_message {
-	
+body {
+	padding-top:20px;
+}
+
+loginform {
+	position: middle;
+}
+
+textarea {
+    resize: none;
+	width: 300px;
+}
+
+.textareathreadname {
+	font-size: 16px;  
+	font-weight: bold;
+}
+
+.allthreadsbody {
+	background-color: #a8a8a8;
+}
+
+table, tr, th, td {
+	background-color: white;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+.post {
+	width: 100%;
+	width: 95vw;
+	table-layout: fixed;
+}
+
+.postinfo {
+	width: 100px;
+	white-space: nowrap;
+	background-color: #cdddf7;
+}
+
+.threadinfo {
+	width: 100px;
+	white-space: nowrap;
+}
+
+.posttext {
+	padding-top: 3px;
+	padding-left: 3px;
+	word-wrap: break-word;
+}
+
+.postlink {
+	border: none;
+}
+
+.allthreads {
+	width: 100%;
+	width: 95vw;
+	border: 1px solid black;
+}
+
+.navbarlink:link {
+	color: white;
+	text-decoration: none;
+}
+
+.navbarlink:visited {
+	color:white;
+    text-decoration: none;
+}
+
+.navbarlink:hover {
+	color:white;
+    text-decoration: underline;
+}
+
+.newuserlink:link {
+	color: blue;
+	text-decoration: none;
+}
+
+.newuserlink:visited {
+	color:blue;
+    text-decoration: none;
+}
+
+.newuserlink:hover {
+	color:blue;
+    text-decoration: underline;
+}
+
+.navbarlogout {
+	float: right;
+}
+
+ul {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #2d2d2d;
+	width: 100%;
+	margin-top: 0px;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+ul > li {
+    display: inline-block;
+	margin-right: 10px;
 }
