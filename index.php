@@ -9,13 +9,19 @@
 
 	if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password'])){
 		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$res = pg_num_rows(pg_query_params($conn, "SELECT username FROM usertable WHERE username=$1 AND password=$2", array($username, $password)));
+		$res = pg_num_rows(pg_query_params($conn, "SELECT username FROM usertable WHERE username=$1", array($username)));
+		// See if user exists.
 		if($res != 0){
-			$_SESSION['loggedin'] = true;
-			$_SESSION['username'] = $_POST['username'];
-			header("Location: start.php");
-			exit();	
+			$salt = pg_fetch_assoc(pg_query_params($conn, "SELECT salt FROM usertable WHERE username=$1", array($username)))['salt'];
+			$password = sha1($salt . $_POST['password']);
+			$res = pg_num_rows(pg_query_params($conn, "SELECT username FROM usertable WHERE username=$1 AND password=$2", array($username, $password)));
+			// See if password correct.
+			if($res != 0){
+				$_SESSION['loggedin'] = true;
+				$_SESSION['username'] = $_POST['username'];
+				header("Location: start.php");
+				exit();	
+			}
 		}
 	}
 ?>

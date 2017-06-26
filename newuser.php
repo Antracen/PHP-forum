@@ -7,9 +7,8 @@
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script>
 			$(document).ready(function(){
-		    	$('form').on('submit', function(event){
-		    		event.preventDefault(); //Prevent the default behaviour of submit and therefore make page not refresh.
-		    			
+				$('form').on('submit', function(event){
+					event.preventDefault(); //Prevent the default behaviour of submit and therefore make page not refresh.
 		    		$.ajax({
 		    			type:'post',
 		    			url:'createuser.php',
